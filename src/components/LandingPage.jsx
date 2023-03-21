@@ -21,6 +21,7 @@ export default function LandingPage() {
         justifyContent: "center",
         alignItems: "center",
         height: "100vh",
+        color:"black"
       }}
     >
       <Box
@@ -66,12 +67,12 @@ export default function LandingPage() {
               return (
                 <Box
                   key={user.id}
-                  sx={{ padding: "5px 20px" }}
+                  sx={{ padding: "5px 20px",  }}
                   onClick={() => disptach(selectUser(user))}
                 >
                   <Link
                     to={`/profile-page/${user.id}`}
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none",color:"black" }}
                   >
                     <Stack direction="row" spacing={2}>
                       <Avatar
@@ -81,7 +82,7 @@ export default function LandingPage() {
                       />
                       <Typography
                         variant="body2"
-                        sx={{ display: "flex", alignItems: "center" }}
+                        sx={{ display: "flex", alignItems: "center", color:"black" }}
                       >
                         {user.name}
                       </Typography>
@@ -92,6 +93,7 @@ export default function LandingPage() {
                         borderBottom: "2px solid #F0EEED",
                         width: "auto",
                         margin: "2px",
+                        color:"black"
                       }}
                     ></Typography>
                   </Link>
