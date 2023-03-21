@@ -53,12 +53,12 @@ export default function Header() {
       </Typography>
 
       <Box key={userData?.id} mt={3}>
-        <Stack key={userData?.id} direction="row" spacing={1}>
+        <Stack key={userData?.id} direction="row" spacing={1} sx={{cursor:"pointer"}}  onClick={handleClick}>
           <Avatar
             alt="Profile-Picture"
             src={userData?.profilepicture}
             sx={{ margin: "1px" }}
-            onClick={handleClick}
+           
           />
           <Typography
             variant="h6"
@@ -81,20 +81,7 @@ export default function Header() {
           <Box
             p={4}
             textAlign="center"
-            sx={{
-              overflowY: "scroll",
-              height: "auto",
-
-              "&::-webkit-scrollbar": {
-                width: "6px",
-              },
-              "&::-webkit-scrollbar-track": {
-                background: "white",
-              },
-              "&::-webkit-scrollbar-thumb": {
-                background: "#888",
-              },
-            }}
+        
           >
             <Avatar
               alt="Profile-Picture"

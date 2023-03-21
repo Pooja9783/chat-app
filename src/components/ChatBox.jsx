@@ -22,6 +22,7 @@ const ChatBox = () => {
 
   useEffect(() => {
     disptach(getData());
+    
   }, [open]);
 
   
