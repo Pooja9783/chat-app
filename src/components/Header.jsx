@@ -22,7 +22,7 @@ export default function Header() {
 
   const users = useSelector((state) => state.data.data);
   const userData = useSelector((state) => state.data);
-
+console.log(users);
   
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -99,7 +99,7 @@ export default function Header() {
             </Typography>
             <Divider my={2} />
             <Box>
-              {users?.map((userDetails) => {
+              {users && users.slice(0,2).map((userDetails) => {
                 return (
                   <Link
                     to={`/profile-page/${userDetails.id}`}
