@@ -27,7 +27,6 @@ export default function Profile() {
                   alt="Profile-Picture"
                   src={userData?.profilepicture}
                   sx={{
-                    
                     width: 186,
                     height: 186,
                     margin: "auto",
@@ -83,7 +82,7 @@ export default function Profile() {
               <Typography variant="h6" mx={2} my={1}>
                 Zipcode : {userData?.address?.zipcode}
               </Typography>
-              <Box sx={{}}>
+              <Box >
                 <img
                   src={map}
                   alt="map"

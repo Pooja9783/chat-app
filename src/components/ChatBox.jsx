@@ -16,13 +16,15 @@ import { getData } from "../Redux/action";
 
 const ChatBox = () => {
   const disptach = useDispatch();
-
   const [open, setOpen] = useState(false);
+
+  const users = useSelector((state) => state.data.data);
 
   useEffect(() => {
     disptach(getData());
-  }, []);
-  const users = useSelector((state) => state.data.data);
+  }, [open]);
+
+  
   const handleChatBoxClick = () => {
     setOpen(!open);
   };
@@ -81,17 +83,8 @@ const ChatBox = () => {
                         sx={{ margin: "1px" }}
                       />
                       <Typography variant="body2" mx={1}>
-                        {user.name}
+                        {user?.name}
                       </Typography>
-                      <Box
-                        component="span"
-                        fontSize={12}
-                        color="gray"
-                        marginLeft={1}
-                      >
-                        {user.status}
-                      </Box>
-                     
                     </Box>
                   </Box>
                 </ListItem>

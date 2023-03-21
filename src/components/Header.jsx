@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -15,9 +15,15 @@ import { selectUser } from "../Redux/action";
 
 export default function Header() {
   const [anchorEl, setAnchorEl] = useState(null);
-  const disptach = useDispatch();
 
+  const disptach = useDispatch();
   const navigate = useNavigate();
+
+
+  const users = useSelector((state) => state.data.data);
+  const userData = useSelector((state) => state.data);
+
+  
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -29,10 +35,8 @@ export default function Header() {
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
 
-  const userData = useSelector((state) => state.data);
-  const user = useSelector((state) => state.data.data);
 
-  console.log(user);
+
   return (
     <Box
       mt={5}
@@ -108,7 +112,7 @@ export default function Header() {
             </Typography>
             <Divider my={2} />
             <Box>
-              {user?.map((userDetails) => {
+              {users?.map((userDetails) => {
                 return (
                   <Link
                     to={`/profile-page/${userDetails.id}`}

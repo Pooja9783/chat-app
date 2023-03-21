@@ -8,12 +8,9 @@ const initialState = {
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_ALL_USER:
-      return {
-        ...state,
-        data: [...action.payload],
-      };
+      return {...state, data: [...action.payload] }
     case SELECT_USER:
-      return action.payload
+      return action.payload;
     default:
       return state;
   }
