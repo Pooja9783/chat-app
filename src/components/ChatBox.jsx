@@ -71,7 +71,7 @@ const ChatBox = () => {
             boxShadow="0 -4px 4px rgba(0,0,0,0.1)"
           >
             <List>
-              {users.map((user, index) => (
+              {users?.map((user, index) => (
                 <ListItem key={index} disableGutters>
                   <Box display="flex" alignItems="center">
                     <Box flexGrow={1} display="flex">
